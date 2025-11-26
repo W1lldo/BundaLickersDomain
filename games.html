@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+        :root{
+            --side-width: 320px;  /* width of the border/background on each side */
+            --content-max: 900px;     /* max width of centered content */
+            --side-color: #203040;    /* side background color (change to pattern/image if you want) */
+            --content-bg: #ffffff;    /* main content background */
+            --accent: #f4f6f8;
+        }
+
+        /* page background: side panels with a different center area */
+        html,body{height:100%; margin:0;}
+        body{
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background:
+              linear-gradient(90deg,
+                var(--side-color) 0 var(--side-width),
+                var(--accent) var(--side-width) calc(100% - var(--side-width)),
+                var(--side-color) calc(100% - var(--side-width)) 100%);
+            -webkit-font-smoothing:antialiased;
+            color:#111;
+        }
+
+        /* centered site container */
+        .site{
+            max-width: var(--content-max);
+            margin: 40px auto;
+            background: transparent
+            padding: 24px;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        /* basic nav and ASCII styles */
+        nav{ text-align:center; margin:14px 0; }
+        nav a{ margin:0 12px; color:#0b66c3; text-decoration:none; font-weight:600; }
+        nav a:hover{ text-decoration:underline; }
+
+        pre.ascii{
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre;
+            line-height: 1;     /* helps characters align */
+            font-size: 12px;
+            overflow:auto;
+            background:#f8f8f8;
+            padding:12px;
+            border-radius:6px;
+            margin:12px 0;
+        }
+
+        /* responsive: shrink side panels on small screens */
+        @media (max-width: 920px){
+            :root{ --side-width: 60px; }
+            .site{ margin:20px; }
+        }
+        @media (max-width: 520px){
+            :root{ --side-width: 20px; }
+            nav a{ display:inline-block; margin:6px; font-size:14px; }
+            .site{ padding:16px; }
+        }
+    </style>
+</head>
+<body>
+   <div class="site">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="opps.html">Opp List</a>
+        <a href="games.html">Games</a>
+        <a href="music.html">Music</a>
+    </nav>
+    <h1>Games</h1>
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/source/975bb8180336509.650951d33fae9.gif" >
+   </div>
+</body>
+</html>
